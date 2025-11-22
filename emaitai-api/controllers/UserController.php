@@ -28,7 +28,12 @@ class UserController {
     }
 
     public function getAllUsers() {
-        return $this->readUsers();
+        $users = $this->readUsers();
+        // Exclure le champ 'password' de la réponse
+        return array_map(function($user) {
+            unset($user['password']);
+            return $user;
+        }, $users);
     }
 
     public function getUserById($id) {
