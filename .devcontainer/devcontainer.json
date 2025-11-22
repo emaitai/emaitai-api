@@ -1,0 +1,27 @@
+{
+  "name": "EMAITAI API - PHP 8.0",
+  "image": "mcr.microsoft.com/devcontainers/php:8.0",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "API PHP",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y php-pdo php-mysql php-curl php-json",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "xdebug.php-debug",
+        "bmewburn.vscode-intelephense-client",
+        "ms-vscode.vscode-json"
+      ],
+      "settings": {
+        "php.validate.executablePath": "/usr/bin/php"
+      }
+    }
+  },
+  "remoteEnv": {
+    "PHP_VERSION": "8.0.30"
+  }
+}
