@@ -2,3 +2,7 @@
 .env.local
 *.log
 vendor/
+
+# Composer
+vendor/
+composer.lock
